@@ -3,9 +3,10 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import terser from '@rollup/plugin-terser';
 import pkg from './package.json' assert { type: 'json' };
+import typescript from "@rollup/plugin-typescript";
 
 export default {
-  input: 'src/index.jsx',
+  input: 'src/index.ts',
   output: [
     { file: pkg.main, format: 'cjs' },
     { file: pkg.module, format: 'esm' },
@@ -19,6 +20,7 @@ export default {
     resolve(),
     commonjs(),
     terser(),
+    typescript({ tsconfig: "./tsconfig.json", resolveJsonModule: true }),
   ],
   external: Object.keys(pkg.peerDependencies),
 };

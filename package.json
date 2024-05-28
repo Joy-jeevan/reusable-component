@@ -1,12 +1,13 @@
 {
-  "name": "@codifytools/react-npm-package-boilerplate",
-  "version": "1.0.14",
+  "name": "react-npm-pack",
+  "version": "1.0.16",
   "description": "",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "scripts": {
-    "storybook": "storybook dev",
+    "storybook": "storybook dev -p 6007",
+    "build-storybook": "storybook build",
     "build": "rollup -c",
     "npm:details": "npm pack --dry-run",
     "npm:publish": "npm run build && npm publish --access public"
@@ -14,13 +15,11 @@
   "keywords": [
     "react",
     "storybook",
-    "rollup",
-    "boilerplate"
+    "rollup"
   ],
-  "author": "Juan Pablo Mejia Duque",
+  "author": "Joy Dmello",
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/codifytools/react-npm-package-boilerplate.git"
+    "type": "git"
   },
   "license": "MIT",
   "engines": {
@@ -28,20 +27,51 @@
   },
   "peerDependencies": {
     "react": ">=16.8.0",
-    "react-dom": ">=16.8.0"
+    "react-dom": ">=16.8.0",
+    "styled-components": "^5.3.10"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.7",
-    "@babel/preset-env": "^7.23.7",
-    "@babel/preset-react": "^7.23.3",
+    "@babel/core": "^7.24.4",
+    "@babel/preset-env": "^7.24.4",
+    "@babel/preset-react": "^7.24.1",
+    "@chromatic-com/storybook": "^1.3.3",
+    "@emotion/cache": "latest",
+    "@emotion/react": "latest",
+    "@emotion/server": "latest",
+    "@emotion/styled": "latest",
+    "@mui/icons-material": "5.14.18",
+    "@mui/material": "5.14.18",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
-    "@storybook/react-vite": "^7.6.6",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@storybook/addon-essentials": "^8.0.8",
+    "@storybook/addon-interactions": "^8.0.8",
+    "@storybook/addon-links": "^8.0.8",
+    "@storybook/addon-onboarding": "^8.0.8",
+    "@storybook/addon-webpack5-compiler-swc": "^1.0.2",
+    "@storybook/blocks": "^8.0.8",
+    "@storybook/react": "^8.0.8",
+    "@storybook/react-vite": "^8.0.8",
+    "@storybook/react-webpack5": "^8.0.8",
+    "@storybook/test": "^8.0.8",
+    "@types/styled-components": "^5.1.34",
+    "chromatic": "^11.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rollup": "^4.9.2",
-    "storybook": "^7.6.6"
+    "rollup": "^4.14.3",
+    "sb-addon-versions": "^1.0.12",
+    "storybook": "^8.0.8",
+    "typescript": "4.9.3"
+  },
+  "overrides": {
+    "@storybook/components": "^8.0.8",
+    "@storybook/theming": "^8.0.8",
+    "@storybook/blocks": "^8.0.8"
+  },
+  "dependencies": {
+    "@storybook/addon-mdx-gfm": "^8.0.9",
+    "react-hook-form": "^7.51.3"
   }
 }
